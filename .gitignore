@@ -1,0 +1,10 @@
+target/
+.idea/.name
+.idea/workspace.xml
+.idea/compiler.xml
+my-app.iml
+.idea/compiler.xml
+.idea/libraries/Maven__junit_junit_3_8_1.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml

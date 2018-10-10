@@ -75,7 +75,7 @@ public class App
 
                 Object o = inputList.get(i);
                 int a = (Integer) o;
-                a = a + input2AsInt;
+
                 inputList.set(i, a + input2AsInt);
 
             }
@@ -84,7 +84,7 @@ public class App
 
                 Object o2 = inputList2.get(j);
                 int a2 = (Integer) o2;
-                a2 = a2 + input4AsInt;
+
                 inputList2.set(j, a2 + input4AsInt);
 
             }

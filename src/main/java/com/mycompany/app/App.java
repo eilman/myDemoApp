@@ -30,8 +30,6 @@ public class App
             System.out.println("Empty ArrayList Detected !!");
 
         }
-            summation = e + e2;
-
         //filling the sum array with sum of our two arrays
             for (int i = 0; i < array.size(); i++) {
                 arraySum.add(array.get(i) + array2.get(i));
@@ -91,7 +89,7 @@ public class App
 
             java.util.ArrayList<Integer> sumArray = new java.util.ArrayList<>();
 
-            int sumNumbers=0;
+            int sumNumbers= input2AsInt+input4AsInt;
 
             SumArrayLists(inputList,input2AsInt,inputList2,input4AsInt, sumArray, sumNumbers);
 

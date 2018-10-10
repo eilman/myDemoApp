@@ -77,6 +77,21 @@ public class AppTest
 
     }
 
+    public void testSumNotNull(){
+        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+
+        ArrayList<Integer> sum = new ArrayList<>(Arrays.asList(2, 4, 6, 8));
+        ArrayList<Integer> empty = new ArrayList<>();
+
+        int b=0;
+
+        new App().SumArrayLists(array,5, array2 ,3, empty,b);
+
+        assertNotNull(empty);
+
+    }
+
     public void testEmptyArrayForSummation(){
         ArrayList<Integer> array = new ArrayList<>();
         ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
@@ -95,6 +110,30 @@ public class AppTest
 
     }
 
+    public void testSumOfTwoIntegers(){
 
+        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> sum = new ArrayList<>(Arrays.asList(2, 4, 6, 8));
+        ArrayList<Integer> empty = new ArrayList<>();
+
+        int a= 8;
+        int b=0;
+
+        assertEquals(a,new App().SumArrayLists(array,5, array2 ,3, empty, b));
+    }
+
+    public void testSumOfTwoIntegersNotNull(){
+
+        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> sum = new ArrayList<>(Arrays.asList(2, 4, 6, 8));
+        ArrayList<Integer> empty = new ArrayList<>();
+
+        int a= 8;
+        int b=0;
+
+        assertNotNull(new App().SumArrayLists(array,5, array2 ,3, empty, b));
+    }
     }
 

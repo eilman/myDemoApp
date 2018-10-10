@@ -1,9 +1,9 @@
 ## This is a markdown file
 
 ***
-Projede arayüzde bulunan yanyana 4 kutunun 1 ve 3.süne array girip,2 ve 4.süne birer sayı girilmelidir. 1. kutuya girilen array eleman sayısı 2.den daha fazla olmalıdır. 
+Projede arayüzde bulunan yanyana 4 kutunun 1 ve 3.süne array girip,2 ve 4.süne birer sayı girilmelidir. 1. kutuya girilen array eleman sayısı 3.den daha fazla olmalıdır. 
 
-Gönder tuşuna basıldığında iki array'i kendi arasında ve iki sayıyı kendi arasında toplayıp toplanmış haldeki array'de toplanmış haldeki sayı aranmaktadır ve result olarak boolean sonuç gösterilmektedir.
+Gönder tuşuna basıldığında iki array'i kendi arasında ve iki sayıyı kendi arasında toplayıp toplanmış haldeki array'de toplanmış haldeki sayı aranmaktadır. Aranmadan önce o iki sayı da sırası ile en sonda oluşan arraye eklenmiştir. Result olarak boolean sonuç gösterilmektedir.
 ***
 
 

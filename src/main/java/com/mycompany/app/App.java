@@ -24,23 +24,29 @@ public class App
         return false;
     }
 
-    public static void SumArrayLists(ArrayList<Integer> array, int e, ArrayList<Integer> array2, int e2, ArrayList<Integer> arraySum, int summation) {
+    public static void SumArrayListsandDetectMin(ArrayList<Integer> array, int e, ArrayList<Integer> array2, int e2, ArrayList<Integer> arraySum, int min) {
         System.out.println("inside search");
         if (array == null ) {
             System.out.println("Empty ArrayList Detected !!");
 
         }
+
+
         //filling the sum array with sum of our two arrays
             for (int i = 0; i < array.size(); i++) {
                 arraySum.add(array.get(i) + array2.get(i));
-                System.out.println(arraySum.get(i));
 
             }
-
-            System.out.println(summation);
+            if(e-e2<0){
+                min = e;
+            }
+            else{
+            min= e2;
+            }
+        System.out.println(min);
     }
 
-
+   public static int minNumber;
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
 
@@ -89,17 +95,16 @@ public class App
 
             java.util.ArrayList<Integer> sumArray = new java.util.ArrayList<>();
 
-            int sumNumbers= input2AsInt+input4AsInt;
 
-            SumArrayLists(inputList,input2AsInt,inputList2,input4AsInt, sumArray, sumNumbers);
 
-            boolean result = App.search(sumArray, sumNumbers);
+            SumArrayListsandDetectMin(inputList,input2AsInt,inputList2,input4AsInt, sumArray, minNumber);
 
-            int result2 = sumNumbers;
+            boolean result = App.search(sumArray, minNumber);
+
+
 
             Map map = new HashMap();
             map.put("result", result);
-            map.put("result2", result2);
 
 
             return new ModelAndView(map, "compute.mustache");

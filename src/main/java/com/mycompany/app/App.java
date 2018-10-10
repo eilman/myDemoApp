@@ -69,6 +69,26 @@ public class App
             String input4 = req.queryParams("input4").replaceAll("\\s","");
             int input4AsInt = Integer.parseInt(input4);
 
+
+            //filling the array with new elements. New elements are element+ searched number
+            for(int i = 0; i<inputList.size(); i++) {
+
+                Object o = inputList.get(i);
+                int a = (Integer) o;
+                a = a + input2AsInt;
+                inputList.set(i, a + input2AsInt);
+
+            }
+
+            for(int j = 0; j<inputList2.size(); j++) {
+
+                Object o2 = inputList2.get(j);
+                int a2 = (Integer) o2;
+                a2 = a2 + input4AsInt;
+                inputList2.set(j, a2 + input4AsInt);
+
+            }
+
             boolean result = App.search(inputList, input2AsInt);
 
             boolean result2 = App.search(inputList2, input4AsInt);
@@ -91,7 +111,6 @@ public class App
                 (rq, rs) -> {
                     Map map = new HashMap();
                     map.put("result", "not computed yet!");
-                    map.put("result2", "not computed yet!");
                     return new ModelAndView(map, "compute.mustache");
                 },
                 new MustacheTemplateEngine());

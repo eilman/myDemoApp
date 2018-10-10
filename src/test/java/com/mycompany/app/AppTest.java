@@ -9,7 +9,8 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class AppTest
+
     extends TestCase
 {
     /**
@@ -17,6 +18,9 @@ public class AppTest
      *
      * @param testName name of the test case
      */
+
+    App obj = new App();
+
     public AppTest( String testName )
     {
         super( testName );
@@ -110,6 +114,8 @@ public class AppTest
 
     }
 
+
+    /*
     public void testSumOfTwoIntegers(){
 
         ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
@@ -120,7 +126,7 @@ public class AppTest
         int a= 8;
         int b=0;
 
-        assertEquals(a,new App().SumArrayLists(array,5, array2 ,3, empty, b));
+        assertEquals(a, );
     }
 
     public void testSumOfTwoIntegersNotNull(){
@@ -135,5 +141,7 @@ public class AppTest
 
         assertNotNull(new App().SumArrayLists(array,5, array2 ,3, empty, b));
     }
+
+    */
     }
 

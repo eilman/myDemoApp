@@ -24,23 +24,19 @@ public class App
         return false;
     }
 
-    public static int SumArrayLists(ArrayList<Integer> array, int e, ArrayList<Integer> array2, int e2, ArrayList<Integer> arraySum, int summation) {
+    public static void SumArrayLists(ArrayList<Integer> array, int e, ArrayList<Integer> array2, int e2, ArrayList<Integer> arraySum, int summation) {
         System.out.println("inside search");
         if (array == null ) {
             System.out.println("Empty ArrayList Detected !!");
 
         }
             summation = e + e2;
-        if (summation>0){
-            System.out.println("55555555555555");
-        }
 
-
-            //filling the sum array with sum of our two arrays
+        //filling the sum array with sum of our two arrays
             for (int i = 0; i < array.size(); i++) {
                 arraySum.add(array.get(i) + array2.get(i));
             }
-                return summation;
+                //return summation;
     }
 
 

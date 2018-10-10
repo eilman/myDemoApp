@@ -24,23 +24,14 @@ public class App
         return false;
     }
 
-    public static void ChangeArrayLists(ArrayList<Integer> array, int e, ArrayList<Integer> array2, int e2) {
+    public static void ChangeArrayLists(ArrayList<Integer> array, int e, ArrayList<Integer> array2, int e2, ArrayList<Integer> arraySum) {
         System.out.println("inside search");
         if (array == null || array2 == null){
             System.out.println("Empty ArrayList Detected !!");
         }
-        //filling the array with new elements. New elements are element+ searched number
-        for(int i = 0; i<array.size(); i++) {
-
-            int a = array.get(i);
-            array.set(i, array.get(i) + e);
-
-        }
-
-        for(int j = 0; j<array2.size(); j++) {
-
-            array2.set(j, array2.get(j) + e2);
-
+        //filling the sum array with sum of our two arrays
+        for (int i = 0; i < array.size(); i++) {
+            arraySum.add(array.get(i) + array2.get(i));
         }
     }
 
@@ -92,9 +83,13 @@ public class App
             String input4 = req.queryParams("input4").replaceAll("\\s","");
             int input4AsInt = Integer.parseInt(input4);
 
-            ChangeArrayLists(inputList,input2AsInt,inputList2,input4AsInt);
+            java.util.ArrayList<Integer> sumArray = new java.util.ArrayList<>();
 
-            boolean result = App.search(inputList, input2AsInt);
+            int sum= input2AsInt+input4AsInt;
+
+            ChangeArrayLists(inputList,input2AsInt,inputList2,input4AsInt, sumArray);
+
+            boolean result = App.search(sumArray, sum);
 
             boolean result2 = App.search(inputList2, input4AsInt);
 
@@ -102,19 +97,14 @@ public class App
             map.put("result", result);
             map.put("result2", result2);
 
-            int sum = 0;
-            if(result==result2){
-
-                System.out.println("SAMEEEEEEEEEEEEEEEE!!!!!!!!!!!!!!!!!!!!!");
-
-            }
+            
             return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
 
         get("/compute",
                 (rq, rs) -> {
-                    
+
                     Map map = new HashMap();
                     map.put("result", "not computed yet!");
                     return new ModelAndView(map, "compute.mustache");

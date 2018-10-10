@@ -72,7 +72,7 @@ public class AppTest
 
         int b=0;
 
-        new App().SumArrayListsandDetectMin(array,5, array2 ,3, empty,b);
+        new App().SumArrayLists(array,5, array2 ,3, empty);
 
         for(int i=0; i<array.size(); i++){
 
@@ -90,7 +90,7 @@ public class AppTest
 
         int b=0;
 
-        new App().SumArrayListsandDetectMin(array,5, array2 ,3, empty,b);
+        new App().SumArrayLists(array,5, array2 ,3, empty);
 
         assertNotNull(empty);
 
@@ -105,7 +105,7 @@ public class AppTest
 
         int b=0;
 
-        new App().SumArrayListsandDetectMin(array,5, array2 ,3, empty, b);
+        new App().SumArrayLists(array,5, array2 ,3, empty);
 
         for(int i=0; i<array.size(); i++){
 
@@ -115,7 +115,7 @@ public class AppTest
     }
 
 
-    /*
+  /*
     public void testOfSumArrayWithInput2(){
 
         ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
@@ -123,9 +123,14 @@ public class AppTest
         ArrayList<Integer> sum = new ArrayList<>(Arrays.asList(2, 4, 6, 8));
         ArrayList<Integer> empty = new ArrayList<>();
 
-        new App().SumArrayLists(array,5, array2 ,3, empty, b);
-        assertEquals(, );
+        int a = 5;
+        new App().SumArrayLists(array,5, array2 ,3, empty);
+
+        int b= empty.get(empty.size()-1);
+
+        assertEquals(a, b);
     }
+
 
     public void testSumOfTwoIntegersNotNull(){
 
@@ -140,6 +145,6 @@ public class AppTest
         assertNotNull(new App().SumArrayLists(array,5, array2 ,3, empty, b));
     }
 
-    */
+*/
     }
 

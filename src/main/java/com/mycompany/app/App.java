@@ -35,8 +35,11 @@ public class App
         //filling the sum array with sum of our two arrays
             for (int i = 0; i < array.size(); i++) {
                 arraySum.add(array.get(i) + array2.get(i));
+                System.out.println(arraySum.get(i));
+
             }
-                //return summation;
+
+            System.out.println(summation);
     }
 
 
@@ -94,7 +97,7 @@ public class App
 
             boolean result = App.search(sumArray, sumNumbers);
 
-            boolean result2 = App.search(inputList2, input4AsInt);
+            int result2 = sumNumbers;
 
             Map map = new HashMap();
             map.put("result", result);

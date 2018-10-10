@@ -24,11 +24,13 @@ public class App
         return false;
     }
 
-    public static void ChangeArrayLists(ArrayList<Integer> array, int e, ArrayList<Integer> array2, int e2, ArrayList<Integer> arraySum) {
+    public static void SumArrayLists(ArrayList<Integer> array, int e, ArrayList<Integer> array2, int e2, ArrayList<Integer> arraySum, int summation) {
         System.out.println("inside search");
         if (array == null || array2 == null){
             System.out.println("Empty ArrayList Detected !!");
         }
+        summation = e+e2;
+
         //filling the sum array with sum of our two arrays
         for (int i = 0; i < array.size(); i++) {
             arraySum.add(array.get(i) + array2.get(i));
@@ -85,11 +87,11 @@ public class App
 
             java.util.ArrayList<Integer> sumArray = new java.util.ArrayList<>();
 
-            int sum= input2AsInt+input4AsInt;
+            int sumNumbers = 0;
 
-            ChangeArrayLists(inputList,input2AsInt,inputList2,input4AsInt, sumArray);
+            SumArrayLists(inputList,input2AsInt,inputList2,input4AsInt, sumArray, sumNumbers);
 
-            boolean result = App.search(sumArray, sum);
+            boolean result = App.search(sumArray, sumNumbers);
 
             boolean result2 = App.search(inputList2, input4AsInt);
 
@@ -97,7 +99,7 @@ public class App
             map.put("result", result);
             map.put("result2", result2);
 
-            
+
             return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 

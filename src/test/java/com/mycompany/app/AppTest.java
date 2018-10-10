@@ -58,4 +58,51 @@ public class AppTest
         assertFalse(new App().search(null, 1));
     }
 
-}
+    //New test methods for summation
+    public void testSum(){
+        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+
+        ArrayList<Integer> sum = new ArrayList<>(Arrays.asList(2, 4, 6, 8));
+        ArrayList<Integer> empty = new ArrayList<>();
+        int a= 8;
+        int b=0;
+
+        new App().SumArrayLists(array,5, array2 ,3, empty,b);
+
+        for(int i=0; i<array.size(); i++){
+
+            assertEquals(sum.get(i), empty.get(i));
+        }
+
+        assertEquals(a,b);
+    }
+
+    public void testEmptyArrayForSummation(){
+        ArrayList<Integer> array = new ArrayList<>();
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+
+        ArrayList<Integer> sum = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> empty = new ArrayList<>();
+
+        int a= 8;
+        int b=0;
+
+        new App().SumArrayLists(array,5, array2 ,3, empty, b);
+
+        for(int i=0; i<array.size(); i++){
+
+            assertEquals(sum.get(i), empty.get(i));
+        }
+
+        assertEquals(a,b);
+    }
+
+    public void testNullForSummation()
+    {
+        
+        assertFalse(new App().search(null, 1));
+
+    }
+    }
+

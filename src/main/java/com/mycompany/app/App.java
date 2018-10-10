@@ -34,23 +34,55 @@ public class App
 
             String input1 = req.queryParams("input1");
             java.util.Scanner sc1 = new java.util.Scanner(input1);
+
+            //New in project
+            String input3 = req.queryParams("input3");
+            java.util.Scanner sc3 = new java.util.Scanner(input3);
+
             sc1.useDelimiter("[;\r\n]+");
+
+            //New in project
+            sc3.useDelimiter("[;\r\n]+");
+
             java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
-            while (sc1.hasNext())
+
+            java.util.ArrayList<Integer> inputList2 = new java.util.ArrayList<>();
+            while (sc1.hasNext()&& sc3.hasNext())
             {
                 int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
+
+                int value2 = Integer.parseInt(sc3.next().replaceAll("\\s",""));
+
                 inputList.add(value);
+
+                inputList2.add(value2);
             }
             System.out.println(inputList);
+            System.out.println(inputList2);
 
 
             String input2 = req.queryParams("input2").replaceAll("\\s","");
             int input2AsInt = Integer.parseInt(input2);
 
+            //New in project
+
+            String input4 = req.queryParams("input4").replaceAll("\\s","");
+            int input4AsInt = Integer.parseInt(input4);
+
             boolean result = App.search(inputList, input2AsInt);
+
+            boolean result2 = App.search(inputList2, input4AsInt);
 
             Map map = new HashMap();
             map.put("result", result);
+            map.put("result2", result2);
+
+            int sum = 0;
+            if(result==result2){
+
+                System.out.println("SAMEEEEEEEEEEEEEEEE!!!!!!!!!!!!!!!!!!!!!");
+
+            }
             return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 

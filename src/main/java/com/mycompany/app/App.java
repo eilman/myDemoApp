@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.logging.log4j.core.appender.ConsoleAppender;
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
 
@@ -22,6 +23,28 @@ public class App
         }
         return false;
     }
+
+    public static void ChangeArrayLists(ArrayList<Integer> array, int e, ArrayList<Integer> array2, int e2) {
+        System.out.println("inside search");
+        if (array == null || array2 == null){
+            System.out.println("Empty ArrayList Detected !!");
+        }
+        //filling the array with new elements. New elements are element+ searched number
+        for(int i = 0; i<array.size(); i++) {
+
+            int a = array.get(i);
+            array.set(i, array.get(i) + e);
+
+        }
+
+        for(int j = 0; j<array2.size(); j++) {
+
+            array2.set(j, array2.get(j) + e2);
+
+        }
+    }
+
+
 
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
@@ -69,25 +92,7 @@ public class App
             String input4 = req.queryParams("input4").replaceAll("\\s","");
             int input4AsInt = Integer.parseInt(input4);
 
-
-            //filling the array with new elements. New elements are element+ searched number
-            for(int i = 0; i<inputList.size(); i++) {
-
-                Object o = inputList.get(i);
-                int a = (Integer) o;
-
-                inputList.set(i, a + input2AsInt);
-
-            }
-
-            for(int j = 0; j<inputList2.size(); j++) {
-
-                Object o2 = inputList2.get(j);
-                int a2 = (Integer) o2;
-
-                inputList2.set(j, a2 + input4AsInt);
-
-            }
+            ChangeArrayLists(inputList,input2AsInt,inputList2,input4AsInt);
 
             boolean result = App.search(inputList, input2AsInt);
 
@@ -109,6 +114,7 @@ public class App
 
         get("/compute",
                 (rq, rs) -> {
+                    
                     Map map = new HashMap();
                     map.put("result", "not computed yet!");
                     return new ModelAndView(map, "compute.mustache");

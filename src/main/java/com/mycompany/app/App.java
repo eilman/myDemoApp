@@ -28,7 +28,6 @@ public class App
         System.out.println("inside search");
         if (array == null ) {
             System.out.println("Empty ArrayList Detected !!");
-            arraySum=null;
 
         }
             summation = e + e2;

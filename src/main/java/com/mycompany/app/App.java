@@ -87,7 +87,7 @@ public class App
 
             java.util.ArrayList<Integer> sumArray = new java.util.ArrayList<>();
 
-            int sumNumbers = 0;
+            int sumNumbers=0;
 
             SumArrayLists(inputList,input2AsInt,inputList2,input4AsInt, sumArray, sumNumbers);
 
